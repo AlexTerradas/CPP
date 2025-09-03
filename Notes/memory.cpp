@@ -29,6 +29,33 @@ int main()
     std::cout << "Value of number using pointer: " << *ptr << std::endl; // dereferencing the pointer to get the value
     
     // the difference between a pointer and a reference is that a pointer can be null, while a reference cannot be null
+
+    // null pointer helps to determin if a pointer is pointing to a valid memory address or not
+    int* nullPtr = nullptr;
+    nullPtr = &number; // now nullPtr is pointing to the address of number
+
+    // Dynamic Memory Allocation
+    // Memory that is allocated after the program is already compiled and running
+    // Useful when we don't know the size of the data at compile time
+
+    int *pNum = NULL; // pointer variable initialized to null
+    pNum = new int; // dynamically allocating memory for an integer
+
+    *pNum = 500; // assigning value to the dynamically allocated memory
+
+    std::cout << "Value of dynamically allocated memory: " << *pNum << std::endl;
+    std::cout << "Adress of dynamically allocated memory: " << pNum << std::endl;
+
+    delete pNum; // deallocating the memory to prevent memory leaks
+
+    // Delete an array
+    
+    char *arrayChar = NULL;
+    arrayChar = new char[50];
+
+    delete[] arrayChar; // deallocating the memory for the array
+
+    return 0;
 }
 
 void PrintValues(int& value)
